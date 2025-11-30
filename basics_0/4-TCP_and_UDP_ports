@@ -1,3 +1,8 @@
-#!/usr/bin/env bash
-# Active Internet connections (only servers)
-netstat -lp
+#!/bin/bash
+
+# Display listening ports with PID and program name
+echo "Active Internet connections (only servers)"
+netstat -lptun 2>/dev/null | head -n -1
+
+echo -e "\nActive UNIX domain sockets (only servers)"
+netstat -lx 2>/dev/null | head -n -1
