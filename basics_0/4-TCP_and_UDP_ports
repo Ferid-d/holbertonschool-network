@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
-# Show listening sockets with PID and program names
-netstat -lp 2>/dev/null | grep LISTEN
+# Show listening TCP and UDP ports
+netstat -tulpn 2>/dev/null | grep LISTEN
