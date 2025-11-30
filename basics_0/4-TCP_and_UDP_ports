@@ -2,8 +2,8 @@
 # Show the listening ports with PID and program name
 
 echo "Active Internet connections (only servers)"
-# Use sudo to see all listening sockets with PID/Program names
-sudo netstat -lptun 2>/dev/null
+# Try different netstat options to find what works
+netstat -tulpn 2>/dev/null
 
 echo -e "\nActive UNIX domain sockets (only servers)"
-sudo netstat -lx 2>/dev/null
+netstat -lx 2>/dev/null
