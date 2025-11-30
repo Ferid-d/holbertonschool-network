@@ -1,3 +1,9 @@
 #!/usr/bin/env bash
-# Show the listening ports
-netstat -lp
+# Show the listening ports with PID and program name
+
+echo "Active Internet connections (only servers)"
+# Use netstat with proper options to show TCP and UDP listening sockets
+netstat -lptun 2>/dev/null
+
+echo -e "\nActive UNIX domain sockets (only servers)"
+netstat -lx 2>/dev/null
