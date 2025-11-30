@@ -2,13 +2,8 @@
 # Show the listening ports with PID and program name
 
 echo "Active Internet connections (only servers)"
-# Try multiple netstat variations to find what works
-if netstat -lptun 2>/dev/null | grep -q LISTEN; then
-    netstat -lptun 2>/dev/null
-else
-    # If no results, try without -n flag
-    netstat -lptu 2>/dev/null
-fi
+# Use netstat with options that work in this environment
+netstat -lptu 2>/dev/null
 
 echo -e "\nActive UNIX domain sockets (only servers)"
 netstat -lx 2>/dev/null
